@@ -24,7 +24,7 @@ export const Form: React.FC<formProperties> = ({
   const addNewItemToContainer = (itemText: string, itemId: string) => {
     newItemChange([
       ...container,
-      { text: itemText, complete: false, id: itemId },
+      { text: itemText, complete: false, item_id: itemId },
     ]);
   };
 

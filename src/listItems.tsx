@@ -13,17 +13,23 @@ export const ListItems: React.FC<ListProperties> = ({
   itemChange,
   removeItem,
 }) => {
-  if (container.length >= 1) {
+  let containerLength = container.length;
+  let lastContainerItem = container[containerLength - 1];
+
+  if (containerLength >= 1) {
+    if (lastContainerItem.item_id === "") {
+      const uniqueItemId = uuidv4();
+      lastContainerItem.item_id = uniqueItemId;
+    }
     return (
       <ul>
         {container.map((Eachitem) => {
-          const uniqueItemId = uuidv4();
           return (
             <ListItem
-              key={uniqueItemId}
+              key={Eachitem.item_id}
               item={Eachitem}
               itemChange={itemChange}
-              id={uniqueItemId}
+              id={Eachitem.item_id}
               removeItem={removeItem}
             />
           );

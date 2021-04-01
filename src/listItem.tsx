@@ -10,10 +10,8 @@ interface ListItemProperties {
 export const ListItem: React.FC<ListItemProperties> = ({
   item,
   itemChange,
-  id,
   removeItem,
 }) => {
-  item.id = id;
   return (
     <div>
       <label>
@@ -30,7 +28,7 @@ export const ListItem: React.FC<ListItemProperties> = ({
           {item.text}
         </span>
       </label>
-      <button id={id} onClick={removeItem}>
+      <button id={item.item_id} onClick={removeItem}>
         Remove item
       </button>
     </div>
