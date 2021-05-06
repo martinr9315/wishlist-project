@@ -25,3 +25,7 @@ Logging in checks if the password hash matches the username, if not, the login a
 
 This means that cracking a password will be equivalent to reversing the hash function which is computationally hard
 
+
+
+Google Slides for mockups: https://docs.google.com/presentation/d/1VcZIgTX0jjEgqdeipmQ-9DK7-zF67u_mgNqt9cLAMa4/edit?usp=sharing
+
