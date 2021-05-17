@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ListItems from "./ListItems";
-import "./List.css";
+import style from './List.css';
  
 class List extends Component {
 
@@ -12,6 +12,7 @@ class List extends Component {
           };
      
         this.addItem = this.addItem.bind(this);
+        this.deleteItem = this.deleteItem.bind(this);
     }
        
     addItem(e) {
@@ -27,7 +28,7 @@ class List extends Component {
             };
           });
          
-          this._inputElement.value = "";
+          this._inputElement.value="";
         }
          
         console.log(this.state.items);
@@ -35,19 +36,28 @@ class List extends Component {
         e.preventDefault();
       }
 
+      deleteItem(key) {
+        var filteredItems = this.state.items.filter(function (item) {
+          return (item.key !== key);
+        });
+       
+        this.setState({
+          items: filteredItems
+        });
+      }
+
     render() {
         return (
-            <div className="list">
-                <div className="header">
-                    <form onSubmit={this.addItem}>
-                        <input ref={(a) => this._inputElement = a}
-                               placeholder="enter task">
-                        </input>
-                        <button type="submit">add</button>
-                    </form>
-                </div>
-                <ListItems entries={this.state.items}/>
-            </div>
+          <div className = {style.List}>
+            <ListItems entries={this.state.items}
+                         delete={this.deleteItem}/>
+            <form onSubmit={this.addItem}>
+              <input ref={(a) => this._inputElement = a} 
+                  placeholder="enter item">
+              </input>
+              <button type="submit">add</button>
+            </form>
+          </div>
         );
     }
 }
