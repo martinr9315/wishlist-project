@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./List.css";
  
-class Friends extends Component {
+class FriendSearch extends Component {
 
     constructor(props) {
         super(props);
@@ -42,4 +42,4 @@ class Friends extends Component {
     }
 }
  
-export default Friends;
+export default FriendSearch;
