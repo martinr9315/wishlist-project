@@ -3,7 +3,6 @@ import ListItems from "./ListItems";
 import "./List.css";
  
 class List extends Component {
-
     constructor(props) {
         super(props);
 
