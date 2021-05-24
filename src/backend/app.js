@@ -68,21 +68,105 @@ readline.on('line', (input) => {
       console.log("  Too few arguments");
     } else {
       additem(args[1],args[2],args[3]);
+    }
+  }
+  if (args[0]==="rmuser") {
+    if (args.length==1) {
+      console.log("  No username entered");
+    } else {
+      rmuser(args[1]);
+    }
+  }
+  if (args[0]==="rmlist") {
+    if (args.length<3) {
+      console.log("  Too few arguments");
+    } else {
+      rmlist(args[1],args[2]);
+    }
+  }
+  if (args[0]==="rmitem") {
+    if (args.length<4) {
+      console.log("  Too few arguments");
+    } else {
+      rmitem(args[1],args[2],args[3]);
+    }
+  }
+  if (args[0]==="getlists") {
+    if (args.length==1) {
+      console.log("  No username entered");
+    } else {
+      getlists(args[1]);
+    }
+  }
+  if (args[0]==="getitems") {
+    if (args.length<3) {
+      console.log("  Too few arguments");
+    } else {
+      getitems(args[1],args[2]);
+    }
+  }
 });
+function getlists(name) {
+  con.query(("SELECT * FROM Lists WHERE UserName=\"" + mysql.escape(name) + "\""), function (err, result) {
+    if (err) throw err;
+    console.log(result);
+  });
+}
+function getitems(name, listname) {
+  con.query(("SELECT * FROM Items WHERE ListName=\"" + mysql.escape(listname) + "\" AND UserName=\""+mysql.escape(name)+"\""), function (err, result) {
+    if (err) throw err;
+    console.log(result);
+  });
+}
+function rmuser(name) {
+  //Remove user from table, remove user's lists and items
+  con.query(("DELETE FROM Users WHERE UserName=\"" + mysql.escape(name) + "\""), function (err, result) {
+    if (err) throw err;
+    console.log('  User ' + name + ' deleted');
+  });
+  con.query(("DELETE FROM Lists WHERE UserName=\"" + mysql.escape(name) + "\""), function (err, result) {
+    if (err) throw err;
+    console.log('  User ' + name + '\'s lists deleted');
+    console.log('  Number of lists deleted: ' + result.affectedRows);
+  });
+  con.query(("DELETE FROM Items WHERE UserName=\"" + mysql.escape(name) + "\""), function (err, result) {
+    if (err) throw err;
+    console.log('  User ' + name + '\'s items deleted');
+    console.log('  Number of items deleted: ' + result.affectedRows);
+  });
+}
+function rmlist(username, listname) {
+  //Remove list from table, remove list's items
+  con.query(("DELETE FROM Lists WHERE ListName=\"" + mysql.escape(listname) + "\" AND UserName=\""+mysql.escape(username)+"\""), function (err, result) {
+    if (err) throw err;
+    console.log('  List ' + listname + ' deleted');
+  });
+  con.query(("DELETE FROM Items WHERE ListName=\"" + mysql.escape(listname) + "\" AND UserName=\""+mysql.escape(username)+"\""), function (err, result) {
+    if (err) throw err;
+    console.log('  Items for list ' + listname + ' deleted');
+    console.log('  Number of items deleted: ' + result.affectedRows);
+  });
+} 
+function rmitem(username,listname,itemname) {
+  con.query(("DELETE FROM Items WHERE Itemname=\""+mysql.escape(itemname)+"\" AND ListName=\"" + mysql.escape(listname) + "\" AND UserName=\""+mysql.escape(username)+"\""), function (err, result) {
+    if (err) throw err;
+    console.log('  Item ' + itemname + ' deleted');
+  });
+}
 function addlist(username, listname) {
-  con.query(("INSERT INTO Lists VALUES (\"" + listname + "\", \""+username+"\")"), function (err, result) {
+  con.query(("INSERT INTO Lists VALUES (\"" + mysql.escape(listname) + "\", \""+ mysql.escape(username) +"\")"), function (err, result) {
     if (err) throw err;
     console.log("  List " + listname + " created for user " + username);
   });
 }
 function adduser(name) {
-  con.query(("INSERT INTO Users VALUES (\"" + name + "\")"), function (err, result) {
+  con.query(("INSERT INTO Users VALUES (\"" + mysql.escape(name) + "\")"), function (err, result) {
     if (err) throw err;
     console.log('  User ' + name + ' created');
   });
 }
 function additem(username, listname, itemname) {
-  con.query(("INSERT INTO Items VALUES (\""+ username + "\", \"" + listname + "\", \""+username+"\")"), function (err, result) {
+  con.query(("INSERT INTO Items VALUES (\""+ mysql.escape(itemname) + "\", \"" + mysql.escape(listname) + "\", \""+ mysql.escape(username) +"\")"), function (err, result) {
     if (err) throw err;
     console.log("  Item " + itemname + " created in list " + listname + " for user " + username);
   });
@@ -121,8 +205,7 @@ function initDatabase() {
   });
 
 }
-//Functions to add: rmuser NAME, LISTNAME, rmlist NAME LISTNAME, rmitem NAME LISTNAME ITEMNAME,
 //addfriend NAME, rmfriend NAME
-//getlists NAME, getlist NAME LISTNAME, getfriends NAME
-//inittable
-//Add check for adding list or friend to invalid user, adding item to invalid list
+//getfriends NAME
+
+//Add check for adding list or friend to invalid user, adding item to invalid list (?)

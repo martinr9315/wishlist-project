@@ -1,6 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Menu from 'components/Menu';
+import React from "react";
+import ReactDOM from "react-dom";
+import Login from "components/login-menu";
 
-import './index.css';
-ReactDOM.render(<Menu />, document.getElementById('menu'));
+ReactDOM.render(<Login />, document.getElementById("login"));
