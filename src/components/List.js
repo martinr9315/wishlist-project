@@ -17,7 +17,7 @@ class List extends Component {
     addItem(e) {
         if (this._inputElement.value !== "") {
           var newItem = {
-            text: this._inputElement.value,
+            value: this._inputElement.value,
             key: Date.now()
           };
        
