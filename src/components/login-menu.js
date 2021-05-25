@@ -17,7 +17,7 @@ export default class Login extends Component {
   render() {
     return (
       <div className="login-wrapper">
-        <h1>Please Log In</h1>
+        <h2>Please Log In</h2>
         <form onSubmit={this.handleSubmit}>
           <label>
             <p>Username</p>
