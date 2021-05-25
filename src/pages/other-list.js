@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Menu from 'components/Menu';
-import List from 'components/List';
+import FriendList from 'components/FriendList';
 
 import './index.css';
 ReactDOM.render(<Menu />, document.getElementById('menu'),);
-ReactDOM.render(<List />, document.getElementById('list'),);
+ReactDOM.render(<FriendList />, document.getElementById('friend-list'),);
 
 
   
