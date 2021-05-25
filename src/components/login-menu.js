@@ -6,12 +6,21 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = { username: "", password: "" };
+    this.handleUsernameChange = this.handleUsernameChange.bind(this);
+    this.handlePasswordChange = this.handlePasswordChange.bind(this));
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(event) {
-    this;
     event.preventDefault();
+  }
+
+  handleUsernameChange(event) {
+    this.setState({ username: event.target.value });
+  }
+
+  handlePasswordChange(event) {
+    this.setState({ password: event.target.value });
   }
 
   render() {
@@ -21,11 +30,11 @@ export default class Login extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             <p>Username</p>
-            <input type="text" />
+            <input type="text" onChange={this.handleUsernameChange} value={this.state.username} />
           </label>
           <label>
             <p>Password</p>
-            <input type="password" />
+            <input type="password" onChange={this.handlePasswordChange} value={this.state.password}/>
           </label>
           <div>
             <button type="submit">Submit</button>
