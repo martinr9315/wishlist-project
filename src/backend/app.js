@@ -5,17 +5,10 @@ var mysql = require("mysql");
 
 //connect to sql database
 var con = mysql.createConnection({
-<<<<<<< HEAD
   host: "localhost",
   user: "root",
-  password: "taesunglee1",
+  password: "[put your root password here]",
   insecureAuth: true,
-=======
-  host: 'localhost',
-  user: 'root',
-  password: '[put your root password here]',
-  insecureAuth: true
->>>>>>> 705dedd8e476e23343f5547e8e0c5cd7e01c5272
 });
 con.connect(function (err) {
   if (err) throw err;
