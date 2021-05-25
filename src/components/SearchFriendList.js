@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./List.css";
  
 class FriendSearch extends Component {
 
@@ -7,17 +6,17 @@ class FriendSearch extends Component {
         super(props);
 
         this.state = {
-            currentFriends: ['Bob', 'Sam', 'Tim']
+            currentFriends: this.props.friends
           };
 
         this.friendSearch = this.friendSearch.bind(this);
     }
 
-    friendSearch(e) {
+    friendSearch(event) {
         if (this.state.currentFriends.includes(this._inputElement.value) === false)
         {
             alert('Friend not Present');
-            e.preventDefault();
+            event.preventDefault();
         }
         else
         {
@@ -28,8 +27,8 @@ class FriendSearch extends Component {
 
     render() {
         return (
-            <div className="friends">
-                <div className="header">
+            <div className="search">
+                <div className="header"> <br/>
                     <form onSubmit={this.friendSearch}>
                         <input ref={(a) => this._inputElement = a}
                                placeholder="Search for Friend">

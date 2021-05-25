@@ -5,6 +5,5 @@ import FriendSearch from 'components/SearchFriendList';
 
 import './index.css';
 ReactDOM.render(<Menu />, document.getElementById('menu'),);
-ReactDOM.render(<FriendSearch />, document.getElementById('friends'),);
-
+ReactDOM.render(<FriendSearch />, document.getElementById('search'),);
 
