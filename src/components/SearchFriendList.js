@@ -6,7 +6,7 @@ class FriendSearch extends Component {
         super(props);
 
         this.state = {
-            currentFriends: this.props.friends
+            currentFriends: ['Bob', 'Tim', 'Sam']
           };
 
         this.friendSearch = this.friendSearch.bind(this);
