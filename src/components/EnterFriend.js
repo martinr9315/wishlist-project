@@ -19,6 +19,7 @@ export default class EnterFriend extends Component {
             console.log(username + " added");
             console.log(this.state.friends);
         }
+        document.getElementById("addFriend").reset();
     } 
 
     removeFriend(friend) {
@@ -48,6 +49,7 @@ export default class EnterFriend extends Component {
                         <input type="submit" value="Submit"></input>
                     </form>
                 </div>
+                <h3>Current Friends</h3>
                 <div className="friend-list">
                     <ul>{currentFriends}</ul>
                 </div>
