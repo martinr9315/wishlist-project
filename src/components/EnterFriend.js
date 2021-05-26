@@ -9,7 +9,7 @@ export default class EnterFriend extends Component {
         event.preventDefault();
         var username = document.getElementById("addFriend").username.value;
         console.log(username);
-        console.log(this.state.friends)
+        console.log(this.state.friends);
     } 
     render() {
         return (
