@@ -1,18 +1,31 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Axios from "axios";
 import style from "./login-menu.css";
 
 export default class Login extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = { username: "", password: "" };
     this.handleUsernameChange = this.handleUsernameChange.bind(this);
-    this.handlePasswordChange = this.handlePasswordChange.bind(this));
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  handleSubmit(event) {
+  onSubmit(event) {
     event.preventDefault();
+    const registered = {
+      username: this.state.username,
+      password: this.state.password,
+    };
+    Axios.post("http://localhost:3101/register", registered).then(
+      (response) => {
+        console.log(response.data);
+      }
+    );
+    this.setState({
+      username: "",
+      password: "",
+    });
   }
 
   handleUsernameChange(event) {
@@ -27,17 +40,25 @@ export default class Login extends Component {
     return (
       <div className="login-wrapper">
         <h2>Please Log In</h2>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.onSubmit}>
           <label>
             <p>Username</p>
-            <input type="text" onChange={this.handleUsernameChange} value={this.state.username} />
+            <input
+              type="text"
+              onChange={this.handleUsernameChange}
+              value={this.state.username}
+            />
           </label>
           <label>
             <p>Password</p>
-            <input type="password" onChange={this.handlePasswordChange} value={this.state.password}/>
+            <input
+              type="password"
+              onChange={this.handlePasswordChange}
+              value={this.state.password}
+            />
           </label>
           <div>
-            <button type="submit">Submit</button>
+            <input type="submit" value="Register" />
           </div>
         </form>
       </div>
