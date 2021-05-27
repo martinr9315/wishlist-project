@@ -7,5 +7,3 @@ import './index.css';
 ReactDOM.render(<Menu />, document.getElementById('menu'),);
 ReactDOM.render(<FriendList />, document.getElementById('friend-list'),);
 
-
-  
