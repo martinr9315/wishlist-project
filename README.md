@@ -1,9 +1,9 @@
-#Wishlist
+# Wishlist
 CS35L Spring 2021
 
 Roxane Martin, Julian Camacho, Seng Chow Choy, Justin Hogarth, Justin Hee
 
-Wishlist aims to simplify gift-giving by creating a space where 
+Wishlist aims to simplify gift-giving by creating a space where users can easily display gifts they'd want, as well as coordinate with others to buy items on another user's list.
 
 #How to run the app locally
 1. Clone the repository using:
