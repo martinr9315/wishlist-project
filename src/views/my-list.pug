@@ -1,0 +1,34 @@
+doctype html
+link(rel='stylesheet' type='text/css' href='/stylesheets/List.css')
+head
+  meta(charset='utf-8')
+  title My List
+div(classname='{Menu}')
+  ul
+    li
+      a(href='/dashboard') Home
+    li
+      a(href='/my-list') My List
+    li
+      a(href='/my-friends') My Friends
+    li
+      a(href='/') Logout
+h1 My List
+each val in list1
+  div
+    p Item name: #{val.ItemName}
+      p Description: #{val.Description}
+      p
+        form(action='http://localhost:3000/my-list' method='POST')
+          label
+            input(type="hidden" name="action" value="delete")
+            input(type='text' name='name' size=40 placeholder='Type item name to confirm deletion')
+            button(type='submit') Remove item
+
+
+form(action='http://localhost:3000/my-list' method='POST')
+  label
+    input(type="hidden" name="action" value="add")
+    input(type='text' name='name' placeholder='Enter item name')
+    input(type='text' name='desc' placeholder='Enter item description')
+    button(type='submit') Add item
