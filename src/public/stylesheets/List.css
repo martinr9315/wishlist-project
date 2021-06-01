@@ -1,0 +1,67 @@
+body {
+  background-color: #494fc1ff;
+  color: #a0fefb;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #a0fefb;
+}
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #494fc1ff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: rgb(44, 48, 119);
+}
+
+.List input {
+  padding: 15px;
+  font-size: 16px;
+  border: 2px solid #a0fefb;
+  width: 150px;
+}
+.List button {
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px;
+  margin-right: 0px;
+  background-color: #a0fefb;
+  color: #494fc1ff;
+  border: 2px solid #494fc1ff;
+}
+.List button:hover {
+  background-color: rgb(44, 48, 119);
+  border: 2px solid #a0fefb;
+  cursor: pointer;
+}
+.List {
+  list-style: none;
+  padding-left: 0;
+  width: 250px;
+} 
+div {
+  color: #a0fefb;
+  background-color: #494fc1ff;
+  border: 2px solid #a0fefb;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  list-style: none;
+}
+.List ul {
+  padding: 0;
+}
