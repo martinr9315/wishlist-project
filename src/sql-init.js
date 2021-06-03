@@ -201,7 +201,7 @@ function initDatabase() {
     if (err) throw err;
     console.log("  Switched to Wishlist database");
   });
-  con.query("CREATE TABLE Users (UserName varchar(255));", function (err, result) {
+  con.query("CREATE TABLE Users (UserName varchar(255), Password varchar(255));", function (err, result) {
     if (err) throw err;
     console.log("  User table created");
   });
