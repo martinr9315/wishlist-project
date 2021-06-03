@@ -6,21 +6,26 @@ Roxane Martin, Julian Camacho, Seng Chow Choy, Justin Hogarth, Justin Hee
 Wishlist aims to simplify gift-giving by creating a space where users can easily display gifts they'd want, as well as coordinate with others to buy items on another user's list.
 
 ## How to run the app locally
-Install MySQL Server using the MySQL community launcher
+1. Install MySQL Server using the MySQL community launcher
+**https://dev.mysql.com/downloads/mysql/**
 
-Run MySQL community launcher, set root password, and change to legacy authentication (Windows)
-Open MySQL in System Preferences, initalize database, and then set root password and change authentication, finally start the MySQL server (Mac)
+- Run MySQL community launcher, set root password, and change to legacy authentication (Windows)
+- Open MySQL in System Preferences, initalize database, and then set root password and change to legacy authentication, finally start the MySQL server (Mac)
 
-Clone the repository using:
+2. Clone the repository using:
 **git clone https://github.com/martinr9315/wishlist-project.git**
 Install all the dependencies in the project folder (/src) using:
 **npm install**
-In all files that call SQL (look through all javascript files and go to the createConnection method), change the root password to whatever you set
-Initialize the SQL database:
-**node sql-init.js**
-Then type "init" and enter, then press Ctrl-C once the confirmation message shows up
 
-In the project directory run:
+3. In all files that call SQL (look through all javascript files and go to the createConnection method), change the root password to your password
+
+4. Initialize the SQL database:
+**node sql-init.js**
+
+5. Type "init" and enter, then press Ctrl-C once the confirmation message shows up
+
+6. In the project directory run:
 **npm start**
-Open http://localhost:3000 to view the app in your browser
+
+7. Open http://localhost:3000 to view the app in your browser
 
