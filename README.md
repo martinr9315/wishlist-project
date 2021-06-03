@@ -18,7 +18,7 @@ Wishlist aims to simplify gift-giving by creating a space where users can easily
 3. Install all the dependencies in the project folder (/src) using:
 **npm install**
 
-4. In all files that call SQL (look through all javascript files and go to the createConnection method), change the root password to your password
+4. In all files that access mySQL database (sql-init.js, index.js, friend-list.js, my-list.js, view-friend.js), change the root password to your password
 
 5. Initialize the SQL database:
 **node sql-init.js**
