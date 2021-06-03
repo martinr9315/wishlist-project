@@ -1,12 +1,11 @@
 {
-  "name": "multi-page-app-with-react",
-  "version": "1.0.0",
-  "description": "Multi Page Application with React",
-  "main": "index.js",
+  "name": "express-locallibrary-tutorial",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "lint": "eslint --ext .jsx,.js src",
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --hot --open --port 3100"
+    "start": "node ./src/bin/www",
+    "devstart": "nodemon ./src/bin/www",
+    "serverstart": "DEBUG=express-locallibrary-tutorial:* npm run devstart"
   },
   "repository": {
     "type": "git",
@@ -41,7 +40,8 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.8",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.8.0",
+    "nodemon": "^2.0.7"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -49,6 +49,12 @@
     "mysql": "^2.18.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11"
   }
 }
