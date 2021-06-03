@@ -14,18 +14,19 @@ Wishlist aims to simplify gift-giving by creating a space where users can easily
 
 2. Clone the repository using:
 **git clone https://github.com/martinr9315/wishlist-project.git**
-Install all the dependencies in the project folder (/src) using:
+
+3. Install all the dependencies in the project folder (/src) using:
 **npm install**
 
-3. In all files that call SQL (look through all javascript files and go to the createConnection method), change the root password to your password
+4. In all files that call SQL (look through all javascript files and go to the createConnection method), change the root password to your password
 
-4. Initialize the SQL database:
+5. Initialize the SQL database:
 **node sql-init.js**
 
-5. Type "init" and enter, then press Ctrl-C once the confirmation message shows up
+6. Type "init" and enter, then press Ctrl-C once the confirmation message shows up
 
-6. In the project directory run:
+7. In the project directory run:
 **npm start**
 
-7. Open http://localhost:3000 to view the app in your browser
+8. Open http://localhost:3000 to view the app in your browser
 
