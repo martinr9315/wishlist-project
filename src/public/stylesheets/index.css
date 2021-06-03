@@ -7,3 +7,9 @@ button {
   border-radius: 5px;
   margin: 5px;
 }
+
+form {
+  border: 2px solid #a0fefb;
+  border-radius: 5px;
+  padding: 15px;
+}
