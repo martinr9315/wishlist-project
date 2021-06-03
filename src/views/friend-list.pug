@@ -16,7 +16,7 @@ div(classname='{Menu}')
 h1 My Friends
 each val in list1
   div
-    p Friend name: #{val.ListName}
+    h3 Friend name: #{val.ListName}
       p 
         form(action='http://localhost:3000/my-friends' method='POST')
           label
@@ -25,15 +25,15 @@ each val in list1
             button(type='submit') Remove friend
         
 
+div 
+  form(action='http://localhost:3000/my-friends' method='POST')
+    label
+      input(type="hidden" name="action" value="add")
+      input(type='text' name='name' placeholder='Enter friend name')
+      button(type='submit') Add friend
 
-form(action='http://localhost:3000/my-friends' method='POST')
-  label
-    input(type="hidden" name="action" value="add")
-    input(type='text' name='name' placeholder='Enter friend name')
-    button(type='submit') Add friend
-
-form(action='http://localhost:3000/my-friends' method='POST')
-  label
-    input(type="hidden" name="action" value="view")
-    input(type='text' name='name' placeholder='Enter friend name')
-    button(type='submit') View friend
+  form(action='http://localhost:3000/my-friends' method='POST')
+    label
+      input(type="hidden" name="action" value="view")
+      input(type='text' name='name' placeholder='Enter friend name')
+      button(type='submit') View friend

@@ -16,8 +16,8 @@ div(classname='{Menu}')
 h1 #{friendname}'s List
 each val in list1
   div
-    p Item name: #{val.ItemName}
-      p Description: #{val.Description}
+    h3 Item name: #{val.ItemName}
+      h4 Description: #{val.Description}
       p
         form(action='http://localhost:3000/view-friend' method='POST')
           label
