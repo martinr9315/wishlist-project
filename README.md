@@ -1,31 +1,25 @@
-# wishlist-project
-CS35L wishlist project
+# Wishlist
+CS35L Spring 2021
 
-Just some ideas for how the database will be stored and calculated:
+Roxane Martin, Julian Camacho, Seng Chow Choy, Justin Hogarth, Justin Hee
 
-Set of user data: Open hash table associating username string to UserData structure
+Wishlist aims to simplify gift-giving by creating a space where users can easily display gifts they'd want, as well as coordinate with others to buy items on another user's list.
 
-UserData contains password hash, linked list of pointers to own wishlists, list of groups
+## How to run the app locally
+Install MySQL Server using the MySQL community launcher
 
-Each group is another list of pointers to own wishlists
+Run MySQL community launcher, set root password, and change to legacy authentication (Windows)
+Open MySQL in System Preferences, initalize database, and then set root password and change authentication, finally start the MySQL server (Mac)
 
-This makes viewing any user's lists (and groups if that's desirable) really easy since hash table access based on username is very fast
+Clone the repository using:
+**git clone https://github.com/martinr9315/wishlist-project.git**
+Install all the dependencies in the project folder (/src) using:
+**npm install**
+Initialize the SQL database:
+**node sql-init.js**
+Then type "init" and enter, then press Ctrl-C once the confirmation message shows up
 
-
-Wishlist data structure is a list of lists, pointed to by userdata structures
-
-Each list is a list of pairs of string (item name) and boolean (whether or not the wish has been granted?), along with an associated username string (maybe have a list name also?)
-
-
-When an account is created along with a password it's initialized with password hash, and empty wishlist list and group list
-
-Password hash calculation is done client side and hash is sent to server, list editing is done server side and sent to client
-
-Logging in checks if the password hash matches the username, if not, the login attempt is rejected
-
-This means that cracking a password will be equivalent to reversing the hash function which is computationally hard
-
-
-
-Google Slides for mockups: https://docs.google.com/presentation/d/1VcZIgTX0jjEgqdeipmQ-9DK7-zF67u_mgNqt9cLAMa4/edit?usp=sharing
+In the project directory run:
+**npm start**
+Open http://localhost:3000 to view the app in your browser
 
