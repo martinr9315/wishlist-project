@@ -1,16 +1,28 @@
-.Menu ul {
+body {
+  background-color: #494fc1ff;
+  color: #a0fefb;
+}
+div {
+  color: #a0fefb;
+  background-color: #494fc1ff;
+  border: 2px solid #a0fefb;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  list-style: none;
+}
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #a0fefb;
 }
-
-.Menu li {
+li {
   float: left;
 }
 
-.Menu li a {
+li a {
   display: block;
   color: #494fc1ff;
   text-align: center;
@@ -20,6 +32,6 @@
 }
 
 /* Change the link color to #111 (black) on hover */
-.Menu li a:hover {
+li a:hover {
   background-color: rgb(44, 48, 119);
 }
