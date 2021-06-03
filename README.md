@@ -15,6 +15,7 @@ Clone the repository using:
 **git clone https://github.com/martinr9315/wishlist-project.git**
 Install all the dependencies in the project folder (/src) using:
 **npm install**
+In all files that call SQL (look through all javascript files and go to the createConnection method), change the root password to whatever you set
 Initialize the SQL database:
 **node sql-init.js**
 Then type "init" and enter, then press Ctrl-C once the confirmation message shows up
