@@ -59,9 +59,40 @@ div {
   border: 2px solid #a0fefb;
   padding: 15px;
   margin-bottom: 15px;
-  border-radius: 5px;
+  border-radius: 10px;
   list-style: none;
 }
 .List ul {
   padding: 0;
+}
+
+input {
+  background-color: #a0fefb;
+  border:none;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 10px;
+  color:#494fc1ff;
+}
+
+::placeholder {
+  color:#494fc1ff;
+}
+
+button {
+  color: #494fc1ff;
+  border: none;
+  border-radius: 5px;
+  margin: 20px;
+  background-color:#a0fefb;
+  padding: 5px;
+}
+
+button:hover {
+  background-color: rgb(44, 48, 119);
+  cursor: pointer;
+}
+
+h4 {
+  overflow-wrap:break-word;
 }
