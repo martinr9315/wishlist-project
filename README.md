@@ -20,7 +20,7 @@ Wishlist aims to simplify gift-giving by creating a space where users can easily
 
 4. In all files that access mySQL database (sql-init.js, index.js, friend-list.js, my-list.js, view-friend.js), change the root password to your password
 
-5. Initialize the SQL database:
+5. Initialize the SQL database (from inside /src):
 **node sql-init.js**
 
 6. Type "init" and enter, then press Ctrl-C once the confirmation message shows up
