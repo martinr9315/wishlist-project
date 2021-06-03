@@ -4,13 +4,22 @@ body {
   }
 
 button {
+  border: none;
   border-radius: 5px;
-  margin: 5px;
+  margin: 10px;
+  background-color:#a0fefb;
+  padding: 5px;
+  color:#494fc1ff;
+}
+
+button:hover {
+  background-color: rgb(44, 48, 119);
+  cursor: pointer;
 }
 
 form {
   border: 5px solid #a0fefb;
-  border-radius: 10px;
+  border-radius: 25px;
   padding: 15px;
   width: 30%;
   text-align: center;
@@ -20,6 +29,7 @@ form {
 
 h1 {
   text-align: center;
+  font-size:xxx-large;
 }
 
 h2 {
@@ -27,8 +37,16 @@ h2 {
 }
 
 input {
+  color:#494fc1ff;
   background-color: #a0fefb;
   border:none;
   padding: 5px;
   border-radius: 5px;
+  margin: 10px;
 }
+::placeholder {
+  color:#494fc1ff;
+}
+
+
+

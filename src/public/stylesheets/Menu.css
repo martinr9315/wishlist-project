@@ -17,6 +17,7 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #a0fefb;
+  border-radius: 5px;
 }
 li {
   float: left;
@@ -35,6 +36,15 @@ li a {
 li a:hover {
   background-color: rgb(44, 48, 119);
 }
-input {
-  margin: 5px;
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+h1 {
+  text-align: center;
+
 }
